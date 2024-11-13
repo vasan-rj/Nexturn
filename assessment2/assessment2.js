@@ -9,17 +9,17 @@ db.createCollection("customers");
 db.customers.insertMany([
     {
         "_id": ObjectId(),
-        "name": "Amit Sharma",
-        "email": "amit.sharma@example.com",
-        "address": { "street": "12 MG Road", "city": "Mumbai", "zipcode": "400001" },
+        "name": "Amit kumar",
+        "email": "amit.@gmail.com",
+        "address": { "street": "12 MG Road", "city": "Mumbai", "zipcode": "00000" },
         "phone": "9898989898",
         "registration_date": ISODate("2023-01-01T12:00:00Z")
     },
     {
         "_id": ObjectId(),
-        "name": "Priya Singh",
-        "email": "priya.singh@example.com",
-        "address": { "street": "22 Nehru Street", "city": "Delhi", "zipcode": "110001" },
+        "name": "Priya",
+        "email": "priya.@gmail.com",
+        "address": { "street": "22 Nehru Street", "city": "Delhi", "zipcode": "10245" },
         "phone": "9787878787",
         "registration_date": ISODate("2023-01-02T12:00:00Z")
     },
@@ -31,14 +31,7 @@ db.customers.insertMany([
         "phone": "9797979797",
         "registration_date": ISODate("2023-01-03T12:00:00Z")
     },
-    {
-        "_id": ObjectId(),
-        "name": "Rahul Mehta",
-        "email": "rahul.mehta@example.com",
-        "address": { "street": "77 MG Road", "city": "Bengaluru", "zipcode": "560001" },
-        "phone": "9595959595",
-        "registration_date": ISODate("2023-01-05T12:00:00Z")
-    }
+    
 ]);
 
 // Creating the orders collection
@@ -51,7 +44,7 @@ db.orders.insertMany([
     {
         "_id": ObjectId(),
         "order_id": "ORD1001",
-        "customer_id": db.customers.findOne({"name": "Amit Sharma"})._id,
+        "customer_id": db.customers.findOne({"name": "Amit kumar"})._id,
         "order_date": ISODate("2023-05-15T14:00:00Z"),
         "status": "shipped",
         "items": [
@@ -63,7 +56,7 @@ db.orders.insertMany([
     {
         "_id": ObjectId(),
         "order_id": "ORD1002",
-        "customer_id": db.customers.findOne({"name": "Priya Singh"})._id,
+        "customer_id": db.customers.findOne({"name": "Priya"})._id,
         "order_date": ISODate("2023-05-16T14:00:00Z"),
         "status": "delivered",
         "items": [
@@ -78,7 +71,7 @@ db.orders.insertMany([
 
 //2. Find Orders for a Specific Customer (Amit Sharma)
 
-let customerId = db.customers.findOne({"name": "Amit Sharma"})._id;
+let customerId = db.customers.findOne({"name": "Amit Kumar"})._id;
 db.orders.find({"customer_id": customerId});
 
 
